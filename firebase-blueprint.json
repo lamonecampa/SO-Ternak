@@ -1,0 +1,33 @@
+{
+  "entities": {
+    "Livestock": {
+      "title": "Livestock",
+      "description": "Represents an individual animal being tracked",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["goat", "horse", "cow"] },
+        "location": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": "number" },
+            "lng": { "type": "number" }
+          },
+          "required": ["lat", "lng"]
+        },
+        "elevation": { "type": "number" },
+        "healthStatus": { "type": "string", "enum": ["excellent", "good", "fair", "poor"] },
+        "batteryLevel": { "type": "number" },
+        "lastUpdate": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "type", "location", "lastUpdate"]
+    }
+  },
+  "firestore": {
+    "/livestock/{livestockId}": {
+      "schema": "Livestock",
+      "description": "A collection of all tracked livestock"
+    }
+  }
+}

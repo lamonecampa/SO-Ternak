@@ -1,0 +1,10 @@
+{
+  "name": "SO-Ternak",
+  "description": "A comprehensive livestock monitoring system for tracking cattle, horses, and goats in open pastures using simulated LoRa technology. Features real-time GPS tracking, elevation monitoring, health status dashboard, weather conditions, and geofencing alerts.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
